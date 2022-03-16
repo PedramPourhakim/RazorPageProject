@@ -15,6 +15,7 @@ namespace MyRazorProject.Mapping
             builder.ToTable("Articles");
             builder.HasKey(x=>x.Id);
             builder.Property(x => x.PictureTitle).HasColumnName("عنوان عکس").IsRequired();
+
         }
     }
 }

@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "ایجاد مقاله ی جدید";
 }
-<div class="col-12 mb-3">
+@*<div class="col-12 mb-3">
     @if (Model.ErrorMessage != null)
     {
         <div class="alert alert-danger">
@@ -13,9 +13,9 @@
     <div class="col-6 mr-auto ml-auto text-center">
         <h1 class="border-bottom">ایجاد مقاله جدید</h1>
     </div>
-</div>
+</div>*@
 
-<form class="mr-auto ml-auto" method="post">
+@*<form class="mr-auto ml-auto" method="post">
     <div class="form-row">
         <div class="form-group col-md-6">
             <label asp-for="@Model.Command.Title"></label>
@@ -46,4 +46,4 @@
         <textarea rows="5" type="text" class="form-control" asp-for="@Model.Command.Body"></textarea>
     </div>
     <button type="submit" class="btn btn-success">ارسال</button>
-</form>
+</form>*@
