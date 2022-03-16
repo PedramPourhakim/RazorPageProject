@@ -16,10 +16,6 @@ namespace MyRazorProject.Pages
         {
             ViewData["Massage"] = "Hello World !";
         }
-        public IActionResult OnGetLoad()
-        {
-            return Page();
-        }
         //public void OnPost(IFormCollection form)
         //{
 
