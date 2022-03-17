@@ -1,0 +1,11 @@
+﻿@page "{id:int}"
+@model MyRazorProject.Pages.Article_DetailsModel
+@{
+}
+<h1 style="color:royalblue;text-align:center">@Model.Article.Title</h1>
+<br />
+<hr />
+<img style="text-align:center" src="@Model.Article.Picture" alt="@Model.Article.PictureAlt"title="@Model.Article.PictureTitle" />
+<hr />
+<br />
+<p style="text-align:center" >@Model.Article.Body</p>

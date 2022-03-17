@@ -14,6 +14,6 @@ namespace MyRazorProject.Models
         public string PictureTitle { get; set; }
         public string ShortDescription { get; set; }
         public string Body { get; set; }
-        public DateTime CreationDate { get; set; }
+        public string CreationDate { get; set; }
     }
 }

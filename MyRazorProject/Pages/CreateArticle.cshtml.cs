@@ -14,8 +14,7 @@ namespace MyRazorProject.Pages
 
         [TempData]
         public string ErrorMessage { get; set; }
-        [TempData]
-        public string SuccessMessage { get; set; }
+        
 
         private readonly BlogContext _context;   
         public CreateArticleModel(BlogContext _context)
@@ -25,7 +24,7 @@ namespace MyRazorProject.Pages
         public void OnGet()
         {
         }
-        public void OnPost(CreateArticle command)
+        public IActionResult OnPost(CreateArticle command)
         {
             if(ModelState.IsValid)
             {
@@ -35,13 +34,14 @@ namespace MyRazorProject.Pages
             command.ShortDescription, command.Body);
                 _context.Articles.Add(article);
                 _context.SaveChanges();
-                SuccessMessage = "مقاله با موفقیت ذخیره شد.";
+                return RedirectToPage("/Index");
             }
             else
             {
                 ErrorMessage = ".لطفا مقادیر خواسته شده را تکمیل نمایید";
+                return Page();
             }
-        
+            
         }
     }
 }

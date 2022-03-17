@@ -10,24 +10,22 @@
         </div>
     </div>
 </div>
+<br />
+@foreach(var article in Model.Articles)
+            {
+                <img style="text-align:center" src="@article.Picture"alt="@article.PictureAlt"title="@article.PictureTitle" />
+                <br />
+                <h1 style="text-align:center">@article.Title</h1>
+                <br />
+                <p style="text-align:center">@article.ShortDescription</p>
+                <br />
+                <br />
+                <h2 style="color:royalblue;text-align:center">@article.CreationDate</h2>
+                <br />
+                <hr />
+                <a style="text-align:center" asp-page="/Article-Details" asp-route-id="@article.Id" >ادامه مطلب</a>
+                <a asp-page="/Index"asp-page-handler="Delete"asp-route-id="@article.Id">حذف</a>
+                
+            }
 
-@*@foreach (var article in Model.Articles)
-{
-    <div class="col-4 mb-2">
-        <div class="card">
-            <img src="@article.Picture" class="card-img-top" alt="@article.PictureAlt" title="@article.PictureTitle">
-            <div class="card-body">
-                <h5 class="card-title">@article.Title</h5>
-                <p class="card-text">
-                    @article.ShortDescription
-                </p>
-                <a asp-page="./ArticleDetails"
-                   asp-route-id="@article.Id"
-                   class="btn btn-primary">ادامه مطلب</a>
-
-                <a asp-page-handler="Delete" asp-route-id="@article.Id" class="btn btn-danger">حذف</a>
-            </div>
-        </div>
-    </div>
-}*@
 

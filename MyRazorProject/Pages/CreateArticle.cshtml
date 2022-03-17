@@ -3,10 +3,7 @@
 @{
     ViewData["Title"] = "ایجاد مقاله ی جدید";
 }
-@if (Model.SuccessMessage!=null)
-{
-    <h1 align="center"style="color:green">@Model.SuccessMessage</h1>
-}
+
 @if(Model.ErrorMessage!=null)
 {
     <h1 align="center"style="color:red">@Model.ErrorMessage</h1>
