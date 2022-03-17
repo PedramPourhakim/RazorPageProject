@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,7 +21,12 @@ namespace MyRazorProject.Pages
         public void OnPost(CreateArticle command)
         {
             var article =
-                new Article(command.Title, command.Picture, command.PictureAlt, command.PictureTitle, command.ShortDescription, command.Body);
+                new Article(command.Title, command.Picture,
+                command.PictureAlt, command.PictureTitle,
+                command.ShortDescription, command.Body);
+            _context.Articles.Add(article);
+            _context.SaveChanges();
+            ViewData["Success"] = "مقاله با موفقیت ذخیره شد.";
         }
     }
 }

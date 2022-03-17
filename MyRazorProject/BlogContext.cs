@@ -10,7 +10,7 @@ namespace MyRazorProject
 {
     public class BlogContext :DbContext
     {
-        public DbSet<Article> Article { get; set; }
+        public DbSet<Article> Articles { get; set; }
         public BlogContext(DbContextOptions<BlogContext>options):base(options)
         {
 
