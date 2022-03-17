@@ -3,47 +3,24 @@
 @{
     ViewData["Title"] = "ایجاد مقاله ی جدید";
 }
-@*<div class="col-12 mb-3">
-    @if (Model.ErrorMessage != null)
-    {
-        <div class="alert alert-danger">
-            @Model.ErrorMessage
-        </div>
-    }
-    <div class="col-6 mr-auto ml-auto text-center">
-        <h1 class="border-bottom">ایجاد مقاله جدید</h1>
-    </div>
-</div>*@
-
-@*<form class="mr-auto ml-auto" method="post">
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label asp-for="@Model.Command.Title"></label>
-            <input class="form-control" asp-for="@Model.Command.Title">
-            <span asp-validation-for="@Model.Command.Title" class="text-danger"></span>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="@Model.Command.Picture"></label>
-            <input class="form-control" asp-for="@Model.Command.Picture">
-            <span asp-validation-for="@Model.Command.Picture" class="text-danger"></span>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="@Model.Command.PictureAlt"></label>
-            <input class="form-control" asp-for="@Model.Command.PictureAlt">
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="@Model.Command.PictureTitle"></label>
-            <input class="form-control" asp-for="@Model.Command.PictureTitle">
-        </div>
-        <div class="form-group col-md-12">
-            <label asp-for="@Model.Command.ShortDescription"></label>
-            <textarea class="form-control" asp-for="@Model.Command.ShortDescription"></textarea>
-            <span asp-validation-for="@Model.Command.ShortDescription" class="text-danger"></span>
-        </div>
-    </div>
-    <div class="form-group">
-        <label asp-for="@Model.Command.Body"></label>
-        <textarea rows="5" type="text" class="form-control" asp-for="@Model.Command.Body"></textarea>
-    </div>
-    <button type="submit" class="btn btn-success">ارسال</button>
-</form>*@
+<form align="center" method="post">
+    <label for="Title">عنوان مقاله</label>
+    <input type="text"name="Title" />
+    <br />
+    <label for="Picture">عکس</label>
+    <input type="text"name="Picture" />
+    <br />
+    <label for="PictureAlt">ALT عکس </label>
+    <input type="text" name="PictureAlt" />
+    <br />
+    <label for="PictureTitle">عنوان عکس</label>
+    <input type="text"name="PictureTitle" />
+    <br />
+    <label for="ShortDescription">توضیحات کوتاه</label>
+    <input type="text"name="ShortDescription" />
+    <br />
+    <label for="Body">متن مقاله</label>
+    <input type="text"name="Body" />
+    <br />
+    <button type="submit">ایجاد مقاله</button>
+</form>
