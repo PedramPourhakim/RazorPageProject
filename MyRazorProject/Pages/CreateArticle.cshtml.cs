@@ -10,7 +10,14 @@ namespace MyRazorProject.Pages
 {
     public class CreateArticleModel : PageModel
     {
-        private readonly BlogContext _context;
+        public CreateArticle Command { get; set; }
+
+        [TempData]
+        public string ErrorMessage { get; set; }
+        [TempData]
+        public string SuccessMessage { get; set; }
+
+        private readonly BlogContext _context;   
         public CreateArticleModel(BlogContext _context)
         {
             this._context = _context;
@@ -20,13 +27,21 @@ namespace MyRazorProject.Pages
         }
         public void OnPost(CreateArticle command)
         {
-            var article =
-                new Article(command.Title, command.Picture,
-                command.PictureAlt, command.PictureTitle,
-                command.ShortDescription, command.Body);
-            _context.Articles.Add(article);
-            _context.SaveChanges();
-            ViewData["Success"] = "مقاله با موفقیت ذخیره شد.";
+            if(ModelState.IsValid)
+            {
+                var article =
+            new Article(command.Title, command.Picture,
+            command.PictureAlt, command.PictureTitle,
+            command.ShortDescription, command.Body);
+                _context.Articles.Add(article);
+                _context.SaveChanges();
+                SuccessMessage = "مقاله با موفقیت ذخیره شد.";
+            }
+            else
+            {
+                ErrorMessage = ".لطفا مقادیر خواسته شده را تکمیل نمایید";
+            }
+        
         }
     }
 }

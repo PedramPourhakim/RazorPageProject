@@ -3,26 +3,37 @@
 @{
     ViewData["Title"] = "ایجاد مقاله ی جدید";
 }
-<h1>@ViewData["Success"]</h1>
-<h1 align="center"style="color:royalblue">ایجاد مقاله ی جدید</h1>
+@if (Model.SuccessMessage!=null)
+{
+    <h1 align="center"style="color:green">@Model.SuccessMessage</h1>
+}
+@if(Model.ErrorMessage!=null)
+{
+    <h1 align="center"style="color:red">@Model.ErrorMessage</h1>
+}
+<h1 align="center" style="color:royalblue">ایجاد مقاله ی جدید</h1>
 <form align="center" method="post">
-    <label for="Title">عنوان مقاله</label>
-    <input type="text"name="Title" />
+    <label asp-for="@Model.Command.Title"></label>
+    <input type="text" asp-for="@Model.Command.Title" />
+    <span asp-validation-for="@Model.Command.Title"></span>
     <br />
-    <label for="Picture">عکس</label>
-    <input type="text"name="Picture" />
+    <label asp-for="@Model.Command.Picture"></label>
+    <input type="text" asp-for="@Model.Command.Picture"/>
+    <span asp-validation-for="@Model.Command.Picture"></span>
     <br />
-    <label for="PictureAlt">ALT عکس </label>
-    <input type="text" name="PictureAlt" />
+    <label asp-for="@Model.Command.PictureAlt"></label>
+    <input type="text" asp-for="@Model.Command.PictureAlt" />
     <br />
-    <label for="PictureTitle">عنوان عکس</label>
-    <input type="text"name="PictureTitle" />
+    <label asp-for="@Model.Command.PictureTitle"></label>
+    <input type="text" asp-for="@Model.Command.PictureTitle" />
     <br />
-    <label for="ShortDescription">توضیحات کوتاه</label>
-    <input type="text"name="ShortDescription" />
+    <label asp-for="@Model.Command.ShortDescription"></label>
+    <input type="text" asp-for="@Model.Command.ShortDescription"/>
+    <span asp-validation-for="@Model.Command.ShortDescription"></span>
     <br />
-    <label for="Body">متن مقاله</label>
-    <input type="text"name="Body" />
+    <label asp-for="@Model.Command.Body"></label>
+    <input type="text" asp-for="@Model.Command.Body" />
+    
     <br />
     <button type="submit">ایجاد مقاله</button>
 </form>
